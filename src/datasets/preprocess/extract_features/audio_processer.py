@@ -417,7 +417,7 @@ class AudioProcessor(object):
         else:
             audio_dir = osp.dirname(audio_path)
             audio_name = osp.basename(audio_path)
-            temp_audio_path = os.path.join(audio_dir, f"tmp_{audio_path}")
+            temp_audio_path = os.path.join(audio_dir, f"tmp_{audio_name}")
             if osp.isfile(temp_audio_path):
                 os.remove(temp_audio_path)
 
