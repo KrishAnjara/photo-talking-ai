@@ -418,7 +418,7 @@ def run_and_log(source_image_path, driving_audio_path, emotion_name, cfg_scale, 
 
     try:
         # crude ETA guess
-        audio = AudioSegment.from_wav(driving_audio_path)
+        audio = AudioSegment.from_wav(ensure_wav_format(driving_audio_path))
         n_chunks = math.ceil(len(audio) / 500)
         eta_sec = n_chunks * 13.3  # heuristic
     except Exception as e:
